@@ -22,14 +22,4 @@ do
   done <<< "$input"
 done
 
-#for group in "${groupArray[@]}"
-#do
-#  userArray+=("$(lid -g "$group" | awk -F'(' '{ print $1 }')")
-#  printf "    \"%s\": {\n      \"users\": [\n" "$group" >> temp.json
-#  for user in "${userArray[@]}"
-#  do
-#    printf "        %s,\n" "$user" >> temp.json
-#  done
-#done
-
-cat temp.yaml
+cat temp.yaml | /usr/local/bin/yaml2json
